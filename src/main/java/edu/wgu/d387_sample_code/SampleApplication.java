@@ -3,7 +3,6 @@ package edu.wgu.d387_sample_code;//package com.example.sampleapplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.scheduling.annotation.Async;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -25,8 +24,8 @@ public class SampleApplication {
             try {
                 InputStream stream = new ClassPathResource("translation_en_US.properties").getInputStream();
                 properties.load(stream);
-                System.out.println(properties.getProperty("welcome"));
                 msg1 = CompletableFuture.supplyAsync(() -> properties.getProperty("welcome"));
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -42,15 +41,17 @@ public class SampleApplication {
             try {
                 InputStream stream = new ClassPathResource("translation_fr_CA.properties").getInputStream();
                 properties.load(stream);
-                System.out.println(properties.getProperty("welcome"));
                 msg2 = CompletableFuture.supplyAsync(() -> properties.getProperty("welcome"));
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
+
     }
 
     public static String getMsg1() throws ExecutionException, InterruptedException {
+
         return msg1.get();
     }
 
@@ -58,20 +59,6 @@ public class SampleApplication {
 
         return msg2.get();
     }
-   /* CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> factorial(BigInteger.valueOf(10)));
-...
-    BigInteger result = future.get();*/
 
-    /*@Async
-    public CompletableFuture<String> getMsg1() {
-        // Perform long-running task
-        return CompletableFuture.completedFuture(msg1);
-    }
-
-    @Async
-    public CompletableFuture<String> getMsg2() {
-        // Perform long-running task
-        return CompletableFuture.completedFuture(msg2);
-    }*/
 }
 

@@ -29,11 +29,19 @@ export class AppComponent implements OnInit{
   currentCheckOutVal!:string;
   message1!: Observable<string>;
   message2!: Observable<string>;
+  easternTime!: Observable<string>;
+  westernTime!: Observable<string>;
+  UTCTime!: Observable<string>;
+  livePresentation!: Observable<string>
 
     ngOnInit(){
 
       this.message1 = this.httpClient.get(this.baseURL + '/api/message1', {responseType: 'text'})
       this.message2 = this.httpClient.get(this.baseURL + '/api/message2', {responseType: 'text'})
+      this.easternTime = this.httpClient.get(this.baseURL + '/api/easternTime', {responseType: 'text'})
+      this.westernTime = this.httpClient.get(this.baseURL + '/api/pacificTime', {responseType: 'text'})
+      this.UTCTime = this.httpClient.get(this.baseURL + '/api/UTCTime', {responseType: 'text'})
+      this.livePresentation = this.httpClient.get(this.baseURL + '/api/livePresentation', {responseType: 'text'})
 
       this.roomsearch= new FormGroup({
         checkin: new FormControl(' '),

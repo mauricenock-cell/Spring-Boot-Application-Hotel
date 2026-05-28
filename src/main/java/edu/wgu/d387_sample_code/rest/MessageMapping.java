@@ -1,4 +1,6 @@
 package edu.wgu.d387_sample_code.rest;
+
+//import edu.wgu.d387_sample_code.Threads;
 import edu.wgu.d387_sample_code.SampleApplication;
 //import edu.wgu.d387_sample_code.Threads;
 import org.springframework.http.MediaType;
@@ -23,7 +25,6 @@ public class MessageMapping {
     public String showMessage1() throws ExecutionException, InterruptedException {
 
         String finalMessage = sampleApplication.getMsg1();
-
         return finalMessage;
     }
 
@@ -32,5 +33,6 @@ public class MessageMapping {
 
         String finalMessage = sampleApplication.getMsg2();
         return finalMessage;
+
     }
 }
