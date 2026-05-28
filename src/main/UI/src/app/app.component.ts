@@ -27,8 +27,14 @@ export class AppComponent implements OnInit{
   request!:ReserveRoomRequest;
   currentCheckInVal!:string;
   currentCheckOutVal!:string;
+  message1!: Observable<string>;
+  message2!: Observable<string>;
 
     ngOnInit(){
+
+      this.message1 = this.httpClient.get(this.baseURL + '/api/message1', {responseType: 'text'})
+      this.message2 = this.httpClient.get(this.baseURL + '/api/message2', {responseType: 'text'})
+
       this.roomsearch= new FormGroup({
         checkin: new FormControl(' '),
         checkout: new FormControl(' ')
