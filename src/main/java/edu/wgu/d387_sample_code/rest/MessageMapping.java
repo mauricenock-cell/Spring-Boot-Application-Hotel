@@ -1,8 +1,9 @@
 package edu.wgu.d387_sample_code.rest;
 
 //import edu.wgu.d387_sample_code.Threads;
-import edu.wgu.d387_sample_code.SampleApplication;
+//import edu.wgu.d387_sample_code.SampleApplication;
 //import edu.wgu.d387_sample_code.Threads;
+import edu.wgu.d387_sample_code.Threads;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,19 +20,19 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class MessageMapping {
 
-   SampleApplication sampleApplication;
+   Threads threads = new Threads();
 
     @RequestMapping(path = "/message1", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String showMessage1() throws ExecutionException, InterruptedException {
 
-        String finalMessage = sampleApplication.getMsg1();
+        String finalMessage = threads.getMsg1();
         return finalMessage;
     }
 
     @RequestMapping(path = "/message2", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String showMessage2() throws ExecutionException, InterruptedException {
 
-        String finalMessage = sampleApplication.getMsg2();
+        String finalMessage = threads.getMsg2();
         return finalMessage;
 
     }
