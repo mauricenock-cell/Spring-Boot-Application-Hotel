@@ -23,16 +23,20 @@ public class DateTimeMapping {
     ZoneId zUTC=ZoneId.of("UTC");
     ZoneId zoneId=ZoneId.systemDefault();
 
-    LocalDateTime localDateTime=LocalDateTime.now();
-    ZonedDateTime zonedDateTime=localDateTime.atZone(zoneId);
+    // Input: Year, Month, Day, Hour, Minute, Second, NanoSecond, ZoneId
+    ZonedDateTime specificTime = ZonedDateTime.of(2026, 10, 13, 17, 30, 0, 0, zoneId);
 
-    ZonedDateTime zonedDateTimeEastern=zonedDateTime.withZoneSameInstant(zEastern);
+
+    /*LocalDateTime localDateTime=LocalDateTime.now();
+    ZonedDateTime zonedDateTime=localDateTime.atZone(zoneId);*/
+
+    ZonedDateTime zonedDateTimeEastern=specificTime.withZoneSameInstant(zEastern);
     LocalDateTime localDateTimeEastern=zonedDateTimeEastern.toLocalDateTime();
 
-    ZonedDateTime zonedDateTimePacific=zonedDateTime.withZoneSameInstant(zPacific);
+    ZonedDateTime zonedDateTimePacific=specificTime.withZoneSameInstant(zPacific);
     LocalDateTime localDateTimePacific=zonedDateTimePacific.toLocalDateTime();
 
-    ZonedDateTime zonedDateTimeUTC = zonedDateTime.withZoneSameInstant(zUTC);
+    ZonedDateTime zonedDateTimeUTC = specificTime.withZoneSameInstant(zUTC);
     LocalDateTime localDateTimeUTC=zonedDateTimeUTC.toLocalDateTime();
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
