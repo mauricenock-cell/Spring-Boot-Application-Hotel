@@ -30,4 +30,4 @@ Windows 11
 ## Modifications made:
 
 1.  Two welcome messages, which are the same message, with one displayed in French and the other in English, are displayed on the homepage.  The messages are displayed
-    with multithreaded programming.  The 
+    with multithreaded programming.  A new class called Theads is created The 
