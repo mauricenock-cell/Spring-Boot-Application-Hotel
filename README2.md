@@ -6,7 +6,7 @@ The application is a hotel website where users can book rooms and view informati
 ## Technology used:
 
 ### Front End:
-HTML, CSS
+Angular, TypeScript, HTML, CSS
 
 ### Back End:
 Spring Boot 2.6.6, Java 21.0.11
