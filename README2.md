@@ -1,7 +1,7 @@
 # Overview of Assignment
 
 This assignment required the student to modify a prebuilt Spring Boot Application.
-The application is a store that sells model rockets and parts.
+The application is a hotel website where users can book rooms and view information about services and amenities.
 
 ## Technology used:
 
