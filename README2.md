@@ -29,5 +29,24 @@ Windows 11
 
 ## Modifications made:
 
-1.  Two welcome messages, which are the same message, with one displayed in French and the other in English, are displayed on the homepage.  The messages are displayed
-    with multithreaded programming.  A new class called Theads is created The 
+1.  Two welcome messages, which are the same message (one in French and the other in English), are displayed on the homepage.  The messages are displayed
+    using multithreaded programming.  A new class called Threads was created along with a fixed thread pool.  For each message, the English or French version of the message (in the form of a string) was retrieved
+    from a file type called a resource bundle and was returned to a data type called CompletableFuture<String>.  This was done for both messages concurrently, resulting in faster execution than running both processes sequentially.
+
+2. Added file MessageMapping.java to create a REST Controller, which is used to send the English and French versions of the message to the appropriate endpoint.
+
+3. Made modifications to the TypeScript file app.component.ts to retrieve the French and English messages from the relevant endpoints.
+
+4. Modified the file app.component.html (added h1 tags) to display both messages on the homepage.
+
+5. Created the file DateTimeMapping.java to create a REST Controller that directs the Eastern, Standard, and Pacific times to the appropriate endpoints.
+
+6. Made modifications to the TypeScript file app.component.ts to retrieve the Eastern, Standard, and Pacific times from the relevant endpoints.
+
+7. Modified the file app.component.html (added h1 tags) to display the Eastern, Standard, and Pacific times.
+
+8. Modified the file app.component.html to display room price in dollars, CAD, and Euros using the currency code and pipe character.
+
+9. Created a Docker image of the application.
+
+    
