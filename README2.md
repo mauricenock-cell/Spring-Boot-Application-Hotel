@@ -33,7 +33,7 @@ Windows 11
     using multithreaded programming.  A new class called Threads was created along with a fixed thread pool.  For each message, the English or French version of the message (in the form of a string) was retrieved
     from a file type called a resource bundle and was returned to a data type called CompletableFuture<String>.  This was done for both messages concurrently, resulting in faster execution than running both processes sequentially.
 
-2. Added file MessageMapping.java to create a REST Controller, which is used to send the English and French versions of the message to the appropriate endpoint.
+2. Added the file MessageMapping.java to create a REST Controller, which is used to send the English and French versions of the message to the appropriate endpoint.
 
 3. Made modifications to the TypeScript file app.component.ts to retrieve the French and English messages from the relevant endpoints.
 
@@ -47,6 +47,6 @@ Windows 11
 
 8. Modified the file app.component.html to display room price in dollars, CAD, and Euros using the currency code and pipe character.
 
-9. Created a Docker image of the application.
+9. Created a Docker image of the application. 
 
-    
+![](images/image4.png)
