@@ -47,6 +47,7 @@ Windows 11
 
 8. Modified the file app.component.html to display room price in dollars, CAD, and Euros using the currency code and pipe character.
 
-9. Created a Docker image of the application. 
+9. Created a Docker image of the application.  Screenshot: 
 
-![](images/image4.png)
+<img src="images/Screenshot 2026-05-30 152739.png">
+
