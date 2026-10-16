@@ -25,15 +25,15 @@ public class MessageMapping {
     @RequestMapping(path = "/message1", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String showMessage1() throws ExecutionException, InterruptedException {
 
-        String finalMessage = threads.getMsg1();
-        return finalMessage;
+        //String finalMessage = threads.getMsg1();
+        return threads.messages[0];
     }
 
     @RequestMapping(path = "/message2", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String showMessage2() throws ExecutionException, InterruptedException {
 
-        String finalMessage = threads.getMsg2();
-        return finalMessage;
+        //String finalMessage = threads.getMsg2();
+        return threads.messages[1];
 
     }
 }
